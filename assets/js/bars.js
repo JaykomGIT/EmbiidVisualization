@@ -1,4 +1,6 @@
+
 (function() { 
+  
 // set the dimensions and margins of the graph
 var margin = {top: 30, right: 30, bottom: 70, left: 60},
     width = 1200 - margin.left - margin.right,
@@ -57,7 +59,9 @@ svg.append("g")
       .style("text-anchor", "middle")
       .text("Three Point Percentage");  
 
-
+      var div = d3.select("#barChart").append("div")
+      .attr("class", "tooltip-bar")
+      .style("opacity", 0);
 // Bars
 svg.selectAll("mybar")
   .data(data)
@@ -67,7 +71,33 @@ svg.selectAll("mybar")
     .attr("y", function(d) { return y(d.percentage); })
     .attr("width", x.bandwidth())
     .attr("height", function(d) { return height - y(d.percentage); })
+    .attr("opacity", '0.5')
     .attr("fill", function(d){return ordinal(d.player) })
+    .on('mouseover', function (d, i) {
+      d3.select(this).transition()
+           .duration('50')
+           .attr('opacity', '1');
+
+           div.transition()
+           .duration(50)
+           .style("opacity", 1);
+
+      let num = (Math.round(d.percentage * 100)).toString() + '%';   
+
+           div.html(num)
+            .style("left", (d3.event.pageX + 10) + "px")
+            .style("top", (d3.event.pageY - 15) + "px");
+    })
+
+    .on('mouseout', function (d, i) {
+      d3.select(this).transition()
+           .duration('50')
+           .attr('opacity', '.50');
+
+           div.transition()
+               .duration('50')
+               .style("opacity", 0);
+    })
 
 })
 
