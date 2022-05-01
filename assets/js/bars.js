@@ -82,7 +82,7 @@ svg.selectAll("mybar")
            .duration(50)
            .style("opacity", 1);
 
-      let num = (Math.round(d.percentage * 100)).toString() + '%';   
+      let num = d.player + " " + "</br>" + (Math.round(d.percentage * 100)).toString() + '%';   
 
            div.html(num)
             .style("left", (d3.event.pageX + 10) + "px")
