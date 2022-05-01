@@ -84,7 +84,7 @@
         
         //set color pallete for different vairables
         var mediaName = sumstat.map(d => d.key) 
-        var color = d3.scaleOrdinal().domain(mediaName).range(colorbrewer.Set2[6])
+        var color = d3.scaleOrdinal().domain(mediaName).range(colorbrewer.Set1[6])
         
         
         //select path

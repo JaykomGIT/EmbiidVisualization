@@ -39,7 +39,7 @@ svg.append("g")
 
 var ordinal = d3.scaleOrdinal()
     .domain(data)
-    .range(["red","orange","yellow","green","blue","indigo","violet","slate"]);
+    .range(["#370617","#6a040f","#9d0208","#d00000","#dc2f02","#e85d04","#f48c06","#faa307", "#ffba08"]);
 
 
     
@@ -71,12 +71,11 @@ svg.selectAll("mybar")
     .attr("y", function(d) { return y(d.percentage); })
     .attr("width", x.bandwidth())
     .attr("height", function(d) { return height - y(d.percentage); })
-    .attr("opacity", '0.5')
     .attr("fill", function(d){return ordinal(d.player) })
     .on('mouseover', function (d, i) {
       d3.select(this).transition()
            .duration('50')
-           .attr('opacity', '1');
+           .attr('opacity', '0.80');
 
            div.transition()
            .duration(50)
@@ -92,7 +91,7 @@ svg.selectAll("mybar")
     .on('mouseout', function (d, i) {
       d3.select(this).transition()
            .duration('50')
-           .attr('opacity', '.50');
+           .attr('opacity', '1');
 
            div.transition()
                .duration('50')
