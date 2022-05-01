@@ -1,8 +1,8 @@
 (function() { 
 // set the dimensions and margins of the graph
 var margin = {top: 30, right: 30, bottom: 70, left: 60},
-    width = 460 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 1200 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#barChart")
@@ -31,10 +31,16 @@ svg.append("g")
     svg.append("text")             
     .attr("transform",
           "translate(" + (width/2) + " ," + 
-                          (height + margin.top + 25) + ")")
+                          (height + margin.top + 40) + ")")
     .style("text-anchor", "middle")
     .text("Player Name");
 
+var ordinal = d3.scaleOrdinal()
+    .domain(data)
+    .range(["red","orange","yellow","green","blue","indigo","violet","slate"]);
+
+
+    
 // Add Y axis
 var y = d3.scaleLinear()
   .domain([0, 0.7])
@@ -61,7 +67,7 @@ svg.selectAll("mybar")
     .attr("y", function(d) { return y(d.percentage); })
     .attr("width", x.bandwidth())
     .attr("height", function(d) { return height - y(d.percentage); })
-    .attr("fill", "#69b3a2")
+    .attr("fill", function(d){return ordinal(d.player) })
 
 })
 

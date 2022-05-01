@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-Dark.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/lines.css">
     <link rel="stylesheet" href="assets/css/Team-Horizontal.css">
 </head>
 
@@ -36,7 +37,9 @@
         </div>
         <div style="height: 112px;"></div>
     </section>
-    <div class="d-flex d-xl-flex justify-content-center align-items-center align-content-center mx-auto justify-content-xl-center align-items-xl-center" id="lineChart" style="color: rgb(167,223,255);height: 800px;background: #9bc5eb;width: 1200px;padding: 0px;"></div>
+    <div class="d-flex d-xl-flex justify-content-center align-items-center align-content-center mx-auto justify-content-xl-center align-items-xl-center" id="lineChart" style="color: rgb(167,223,255);height: 800px;background: #9bc5eb;width: 1200px;padding: 0px;">
+        <svg id="lineChartSVG" width="1200" height="800"></svg>
+    </div>
     <div style="height: 112px;"></div>
     <section class="py-4 py-xl-5" style="color: rgb(1,14,84);background: rgba(0,15,38,0);">
         <div class="container">
@@ -88,8 +91,11 @@
             </div>
         </div>
     </footer>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script>src="bars.js"</script>
+    <script src="assets/js/bars.js"></script>
+    <script src="assets/js/lines.js"></script>
 </body>
 
 </html>
