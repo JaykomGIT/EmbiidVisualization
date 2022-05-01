@@ -106,7 +106,10 @@
             .attr("stroke", d => color(d.key))
             .attr("stroke-width", 2)
         
-        
+        var div = d3.select("#lineChart").append("div")
+            .attr("class", "tooltip-line")
+            .style("opacity", 0);
+
         //append circle 
         d3.select("svg")
             .selectAll("circle")
@@ -118,6 +121,23 @@
             .attr("cx", d => xScale(d.year))
             .attr("cy", d => yScale(d.spending))
             .style("fill", d => color(d.name))
+
+            .on('mouseover', function (d, i) {
+                d3.select(this).transition()
+                     div.html(d.spending)
+                      .style("left", (d3.event.pageX + 10) + "px")
+                      .style("top", (d3.event.pageY - 15) + "px");
+
+                    div.transition()
+                      .duration(50)
+                      .style("opacity", 1);
+              })
+
+              .on('mouseout', function (d, i) {
+                div.transition()
+                     .duration('50')
+                     .style("opacity", 0);
+           });
         
         
         //append legends
