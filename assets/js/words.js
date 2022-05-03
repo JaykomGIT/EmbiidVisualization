@@ -34,7 +34,7 @@ var layout = d3.layout.cloud()
 
 
     $("#randomizer").on("click", function (event) {
-        location.reload();
+        draw(layout);
     })
  
 
