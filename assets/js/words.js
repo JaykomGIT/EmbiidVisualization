@@ -34,8 +34,8 @@ var layout = d3.layout.cloud()
 
 
     $("#randomizer").on("click", function (event) {
-        draw(layout);
-    })
+      draw(layout);
+  })
  
 
 // This function takes the output of 'layout' above and draw the words
