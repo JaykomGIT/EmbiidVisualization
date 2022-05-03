@@ -27,6 +27,28 @@
             <div class="d-none d-md-block"></div>
         </div>
     </nav>
+    <div style="height: 112px;"></div>
+    <section class="py-4 py-xl-5" style="color: rgb(1,14,84);background: rgba(0,15,38,0);">
+        <div class="container">
+            <div class="text-white bg-dark border rounded border-0 p-4 p-md-5">
+                <h2 class="fw-bold text-white mb-3">Firstly, let's look at Embiid as a person. What makes him great?</h2>
+                <p class="mb-4">WE wanted to open things off by illustrating that Joel Embiid is both a force on the court and a personality off the court.</p>
+                <p>The data used in this word cloud was collected from multiple news  articles dedicated to other professional basketball players and hall of famer's singing the praises of Joel Embiid. These words were collected when asked to describe Joel embiid in one word.</p>
+                <div class="my-3"><a class="btn btn-primary btn-lg me-2" role="button" href="#wordChart">View Word Cloud</a></div>
+            </div>
+        </div>
+    </section>
+    <div style="height: 112px;"></div>
+    <div class="d-flex d-xl-flex justify-content-center align-items-center align-content-center mx-auto justify-content-xl-center align-items-xl-center" id="wordChart" style="color: rgb(167,223,255);height: 800px;background: #9bc5eb;width: 1200px;">
+        <div id="wordCloud">
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <button id="randomizer" type="button" class="btn btn-primary btn-lg">Randomize</button>
+        </div>
+    </div>
+    <div style="height: 112px;"></div>
     <section class="py-4 py-xl-5">
         <div class="container">
             <div class="text-white bg-dark border rounded border-0 p-4 p-md-5">
@@ -56,19 +78,6 @@
     <div class="d-flex d-xl-flex justify-content-center align-items-center align-content-center mx-auto justify-content-xl-center align-items-xl-center" id="barChart" style="color: rgb(167,223,255);height: 800px;background: #9bc5eb;width: 1200px;">
     </div>
     <div style="height: 112px;"></div>
-    <section class="py-4 py-xl-5" style="color: rgb(1,14,84);background: rgba(0,15,38,0);">
-        <div class="container">
-            <div class="text-white bg-dark border rounded border-0 p-4 p-md-5">
-                <h2 class="fw-bold text-white mb-3">Finally, let's look at Embiid alone. Where is he shooting from?</h2>
-                <p class="mb-4">This last&nbsp; bit of information is really important to understand the dimensions of Embiid as a player. Being able to see that he is a threat from anywhere really helps to bring his talents to light.</p>
-                <p>Embiid is truly a revolutionary center. Being a threat from anywhere on the court is the cornerstone of his gameplay and has made it supremely easy for the 76'ers to build around him (except with a point guard who refuses to shoot but, that's an outlier).&nbsp;</p>
-                <div class="my-3"><a class="btn btn-primary btn-lg me-2" role="button" href="#shotChart">View Shot Chart</a></div>
-            </div>
-        </div>
-    </section>
-    <div style="height: 112px;"></div>
-    <div class="d-flex d-xl-flex justify-content-center align-items-center align-content-center mx-auto justify-content-xl-center align-items-xl-center" id="shotChart" style="color: rgb(167,223,255);height: 800px;background: #9bc5eb;width: 1200px;"></div>
-    <div style="height: 112px;"></div>
     <footer class="text-center py-4">
         <div class="container">
             <div class="row row-cols-1 row-cols-lg-3">
@@ -96,8 +105,11 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="assets/js/bars.js"></script>
     <script src="assets/js/lines.js"></script>
+    <script src="assets/js/words.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
 </body>
 
 </html>
